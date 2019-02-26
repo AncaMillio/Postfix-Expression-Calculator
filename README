@@ -1,0 +1,32 @@
+Tema1 IOCLA
+
+Am utilizat varibilele neinitializate, declarate in zona .bss:
+Array_Length -  lungimea inputului
+         val -  cifra curenta, ea va fi adaugata la numarul in formare
+          nr - numarul in formare din cifre consecutive ale inputului
+     negativ - arata daca numarul din input este negativ, pentru ca dupa
+               formare, sa fie convertit in numar negativ
+
+Etapele programului:
+
+Citirea de la tastatura, facuta prin intermediul macro-ului GET_STRING.
+Aflarea lungimii inputului.(label: test_bit)
+Incarcarea lungimii in variabila Array_List.(label:set_lung)
+Citirea pe rand a caracterelor.(label: loop_start)
+Tot la aceasta eticheta se stabileste daca acest caracter curent este cifra,
+sau operand(exact care operand), sau semn.
+In functie de caz, se merge la o alta eticheta corespunzatoare:
+
+creeaza_numar - se converteste caracterul curent in intreg;
+suma - operatia de adunare si punerea rezltatului inapoi in stiva;
+diferenta - operatia de scadere si punerea rezltatului inapoi in stiva;
+inmultire - operatia de inmultire si punerea rezltatului inapoi in stiva;
+impartire - operatia de impartire si punerea rezltatului inapoi in stiva;
+verif_semn - daca dupa - urmeaza direct o cifra, atunci acesta este semn,
+             altfel este operand;
+set_neg - se seteaza variabila care retine negativitatea;
+convert_neg - se realizeaza convertirea in numar negativ;
+push_stiva - se pune in stiva numarul format;
+continua - se continua parcurgerea inputului
+
+Afisarea rezultatului (label: incheiere_loop).
